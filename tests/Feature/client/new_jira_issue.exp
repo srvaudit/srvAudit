@@ -1,0 +1,33 @@
+#!/usr/bin/expect -f
+
+#exp_internal 1
+set timeout 5
+
+spawn /usr/bin/ssh -p [lindex $argv 0] [lindex $argv 1]
+
+expect {
+  "(yes/no)?" {
+    send "yes\r"
+  }
+}
+
+expect "cotton@192.168.42.178's password: "
+send "4ri1home\r"
+
+expect "blank for new"
+send "\r"
+
+expect "Enter subject for new ticket: "
+send "Unit test ticket\r"
+
+expect "ubuntu:~$ "
+send "free -m\r"
+
+sleep 1 
+expect "ubuntu:~$ "
+send "exit\r"
+
+expect ": "
+send "Unit test notes\r"
+
+interact

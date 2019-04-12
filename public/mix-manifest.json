@@ -1,0 +1,12 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/js/moment.js": "/js/moment.js",
+    "/js/jquery.min.js": "/js/jquery.min.js",
+    "/js/jquery-ui.min.js": "/js/jquery-ui.min.js",
+    "/js/timeago.js": "/js/timeago.js",
+    "/js/rowlink.js": "/js/rowlink.js",
+    "/js/sweetalert.min.js": "/js/sweetalert.min.js",
+    "/css/sweetalert.css": "/css/sweetalert.css",
+    "/js/vim.js": "/js/vim.js"
+}

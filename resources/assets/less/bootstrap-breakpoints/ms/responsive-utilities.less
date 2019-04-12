@@ -1,0 +1,13 @@
+.visible-ms {
+	.responsive-invisibility();
+
+	@media (min-width: @screen-ms-min) and (max-width: @screen-ms-max) {
+		.responsive-visibility();
+	}
+}
+
+.hidden-ms {
+	@media (min-width: @screen-ms-min) and (max-width: @screen-ms-max) {
+		.responsive-invisibility();
+	}
+}

@@ -1,0 +1,26 @@
+#!/usr/bin/expect -f
+
+set timeout 1
+
+spawn /usr/bin/ssh [lindex $argv 0]
+
+expect "password:"
+send "vagrant\r"
+
+expect "blank for new"
+send "[lindex $argv 1]\r"
+
+expect "$ "
+send "df -h\r"
+
+sleep 1 
+expect "$ "
+send "exit\r"
+
+expect -exact ": "
+send "Unit test update notes\r"
+
+expect "Choose ticket status (default 4):"
+send "3\r"
+
+interact

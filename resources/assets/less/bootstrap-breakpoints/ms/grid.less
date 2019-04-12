@@ -1,0 +1,19 @@
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.container {
+	.container-fixed();
+
+	@media (min-width: @screen-ms-min) and (max-width: @screen-ms-max) {
+		width: 90%;
+	}
+}
+
+// Medium small grid
+//
+// Columns, offsets, pushes, and pulls for the medium small phone device range.
+
+@media (min-width: @screen-ms-min) {
+	.make-grid(ms);
+}

@@ -1,0 +1,32 @@
+#!/usr/bin/expect -f
+
+set timeout 1
+
+spawn /usr/bin/ssh -p [lindex $argv 0] [lindex $argv 1]
+
+expect "password:"
+send "4ri1home\r"
+
+expect "blank for new"
+send "\r"
+
+expect "Choose tracker for new ticket: "
+send "2\r"
+
+expect "Enter subject for new ticket: "
+send "Unit test ticket\r"
+
+expect "$ "
+send "free -m\r"
+
+sleep 1 
+expect "$ "
+send "exit\r"
+
+expect -exact ": "
+send "Unit test notes\r"
+
+expect "Choose ticket status (default 4):"
+send "2\r"
+
+interact
