@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
 
     public function footicon()
     {
-        $icons = array(
+        $icons = [
             'key',
             'rocket',
             'magic',
@@ -83,7 +83,7 @@ class AppServiceProvider extends ServiceProvider
             'mobile',
             'spinner fa-pulse',
             'beer fa-rotate-180'
-        );
+        ];
         $icon = $icons[mt_rand(0, count($icons) - 1)];
         return $icon;
     }

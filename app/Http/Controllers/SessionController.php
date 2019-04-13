@@ -166,7 +166,7 @@ class SessionController extends Controller
     {
         $user = Auth::user();
         $users = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->get();
-        $topusers = array();
+        $topusers = [];
         foreach ($users as $auser) {
             $topusers[] = $auser->username;
         }
@@ -186,7 +186,7 @@ class SessionController extends Controller
     {
         $user = Auth::user();
         $servers = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->get();
-        $topservers = array();
+        $topservers = [];
         foreach ($servers as $server) {
             $topservers[] = $server->hostname;
         }
@@ -208,10 +208,10 @@ class SessionController extends Controller
         $servers = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('hostname')->orderBy('hostname', 'asc')->groupBy('hostname')->get();
         $users = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('username')->orderBy('username', 'asc')->groupBy('username')->get();
         $sessions = Session::select('sessions.id as id', 'sessions.sid as sid', 'sessions.hostname as hostname', 'sessions.username as username', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->where('hostname', '=', "$id")->distinct()->orderBy('sessions.created_at', 'desc')->simplePaginate(25);
-        $numcommands = array();
-        $numlines = array();
-        $prettystarttimes = array();
-        $sessiondurations = array();
+        $numcommands = [];
+        $numlines = [];
+        $prettystarttimes = [];
+        $sessiondurations = [];
         foreach ($sessions as $session) {
             $numcommands[] = $session->commands()->count();
             $prettystarttimes[] = $session->created_at->diffForHumans();
@@ -244,10 +244,10 @@ class SessionController extends Controller
         $servers = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('hostname')->orderBy('hostname', 'asc')->groupBy('hostname')->get();
         $users = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('username')->orderBy('username', 'asc')->groupBy('username')->get();
         $sessions = Session::select('sessions.id as id', 'sessions.sid as sid', 'sessions.hostname as hostname', 'sessions.username as username', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->where('username', '=', "$username")->distinct()->orderBy('sessions.created_at', 'desc')->simplePaginate(25);
-        $numcommands = array();
-        $numlines = array();
-        $prettystarttimes = array();
-        $sessiondurations = array();
+        $numcommands = [];
+        $numlines = [];
+        $prettystarttimes = [];
+        $sessiondurations = [];
         foreach ($sessions as $session) {
             $numcommands[] = $session->commands()->count();
             $prettystarttimes[] = $session->created_at->diffForHumans();
@@ -278,8 +278,8 @@ class SessionController extends Controller
         $servers = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('hostname')->orderBy('hostname', 'asc')->groupBy('hostname')->get();
         $users = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('username')->orderBy('username', 'asc')->groupBy('username')->get();
         $sessions = Session::select('sessions.id as id', 'sessions.sid as sid', 'sessions.hostname as hostname', 'sessions.username as username', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->orderBy('sessions.created_at', 'desc')->simplePaginate(25);
-        $numcommands = array();
-        $numlines = array();
+        $numcommands = [];
+        $numlines = [];
         if (count($sessions) > 0) {
             foreach ($sessions as $session) {
                 $numcommands[] = $session->commands()->count();
