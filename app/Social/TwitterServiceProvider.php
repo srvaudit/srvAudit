@@ -9,7 +9,7 @@ class TwitterServiceProvider extends AbstractServiceProvider
 {
    /**
      *  Handle Facebook response
-     * 
+     *
      *  @return Illuminate\Http\Response
      */
     public function handle()
@@ -34,10 +34,10 @@ class TwitterServiceProvider extends AbstractServiceProvider
             'name' => $user->name,
             'email' => $user->email,
             'settings' => [
-                'twitter_id' => $user->id,                
+                'twitter_id' => $user->id,
             ]
-        ]);        
+        ]);
 
         return $this->login($newUser);
-    }       
+    }
 }

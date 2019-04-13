@@ -35,7 +35,8 @@ class Documentation
         $this->cache = $cache;
     }
 
-    public function markdown($text) {
+    public function markdown($text)
+    {
         //define('DEFAULT_VERSION', '0.1');
         return (new ParsedownExtra)->text($text);
     }

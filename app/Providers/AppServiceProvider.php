@@ -13,9 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if(isset($_SERVER['REQUEST_URI'])) {
+        if (isset($_SERVER['REQUEST_URI'])) {
             $this->urlfrag = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-            $this->urlfragm = substr(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH),0,7);
+            $this->urlfragm = substr(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), 0, 7);
         } else {
             $this->urlfrag = '/';
             $this->urlfragm = '/';

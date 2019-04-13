@@ -9,7 +9,7 @@ class GoogleServiceProvider extends AbstractServiceProvider
 {
    /**
      *  Handle Facebook response
-     * 
+     *
      *  @return Illuminate\Http\Response
      */
     public function handle()
@@ -34,10 +34,10 @@ class GoogleServiceProvider extends AbstractServiceProvider
             'name' => $user->name,
             'email' => $user->email,
             'settings' => [
-                'google_id' => $user->id,                
+                'google_id' => $user->id,
             ]
-        ]);        
+        ]);
 
         return $this->login($newUser);
-    }       
+    }
 }

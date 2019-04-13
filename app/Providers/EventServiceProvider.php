@@ -63,10 +63,10 @@ class EventServiceProvider extends ServiceProvider
         'Laravel\Spark\Events\Teams\UserInvitedToTeam' => [
             'Laravel\Spark\Listeners\Teams\CreateInvitationNotification',
         ],
-		\SocialiteProviders\Manager\SocialiteWasCalled::class => [
-			// add your listeners (aka providers) here
-			'SocialiteProviders\Jira\JiraExtendSocialite@handle',
-		],
+        \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+            // add your listeners (aka providers) here
+            'SocialiteProviders\Jira\JiraExtendSocialite@handle',
+        ],
     ];
 
     /**
