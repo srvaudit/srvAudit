@@ -36,6 +36,7 @@ let token = document.head.querySelector('meta[name="csrf-token"]');
 if (token) {
     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
+    alert('foo');
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
@@ -49,5 +50,5 @@ import Echo from 'laravel-echo'
 
 window.Echo = new Echo({
     broadcaster: 'socket.io',
-    host: window.location.hostname + ':333'
+    host: window.location.hostname + ':2053'
 });

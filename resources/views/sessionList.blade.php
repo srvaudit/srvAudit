@@ -57,7 +57,7 @@
 @section('content')
 
 <div class="container-fluid nopadding-small">
-    <div class="table-responsive noborders-small noborders">
+    <div class="table-responsive noborders-small noborders smoothscroll">
             <table class="table table-hover table-sm table-striped">
               <thead>
                 <tr>

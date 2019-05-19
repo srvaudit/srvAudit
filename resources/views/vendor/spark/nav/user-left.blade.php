@@ -17,3 +17,10 @@
         <li class="nav-item">
 	      <a class="nav-link" href="#" onclick="Intercom('show');return false;">Support</a>
 	    </li>
+        <li class="nav-item">
+           <div class="flex-fill mr-2 d-sm-block d-md-none">
+               <form class="form-inline my-sm-0">
+                   <input class="typeahead form-control mr-sm-2 search-box" style="width:100%" type="search" placeholder="Search" aria-label="Search" autocomplete="off" autocorrect="off" autocapitalize="none">
+               </form>
+           </div>
+	    </li>

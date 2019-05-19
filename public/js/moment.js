@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 421);
+/******/ 	return __webpack_require__(__webpack_require__.s = 369);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -69,34 +69,8 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = addUnitPriority;
-/* harmony export (immutable) */ __webpack_exports__["b"] = getPrioritizedUnits;
-var priorities = {};
-
-function addUnitPriority(unit, priority) {
-    priorities[unit] = priority;
-}
-
-function getPrioritizedUnits(unitsObj) {
-    var units = [];
-    for (var u in unitsObj) {
-        units.push({unit: u, priority: priorities[u]});
-    }
-    units.sort(function (a, b) {
-        return a.priority - b.priority;
-    });
-    return units;
-}
-
-
-/***/ }),
-
-/***/ 12:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = createLocal;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__from_anything__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__from_anything__ = __webpack_require__(41);
 
 
 function createLocal (input, format, locale, strict) {
@@ -106,7 +80,7 @@ function createLocal (input, format, locale, strict) {
 
 /***/ }),
 
-/***/ 13:
+/***/ 11:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -132,7 +106,7 @@ var WEEKDAY = 8;
 
 /***/ }),
 
-/***/ 14:
+/***/ 12:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -144,7 +118,7 @@ function hasOwnProp(a, b) {
 
 /***/ }),
 
-/***/ 15:
+/***/ 13:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -179,17 +153,17 @@ function getParsingFlags(m) {
 
 /***/ }),
 
-/***/ 17:
+/***/ 14:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = copyConfig;
 /* harmony export (immutable) */ __webpack_exports__["a"] = Moment;
 /* harmony export (immutable) */ __webpack_exports__["c"] = isMoment;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_hooks__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_has_own_prop__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_is_undefined__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__create_parsing_flags__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_hooks__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_has_own_prop__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_is_undefined__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__create_parsing_flags__ = __webpack_require__(13);
 
 
 
@@ -271,7 +245,7 @@ function isMoment (obj) {
 
 /***/ }),
 
-/***/ 18:
+/***/ 15:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -280,12 +254,12 @@ function isMoment (obj) {
 /* harmony export (immutable) */ __webpack_exports__["c"] = set;
 /* harmony export (immutable) */ __webpack_exports__["d"] = stringGet;
 /* harmony export (immutable) */ __webpack_exports__["e"] = stringSet;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__units_aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__units_priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_hooks__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_is_function__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__units_month__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__units_year__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__units_aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__units_priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_hooks__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_is_function__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__units_month__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__units_year__ = __webpack_require__(23);
 
 
 
@@ -351,7 +325,19 @@ function stringSet (units, value) {
 
 /***/ }),
 
-/***/ 194:
+/***/ 16:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = isFunction;
+function isFunction(input) {
+    return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
+}
+
+
+/***/ }),
+
+/***/ 187:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -365,7 +351,7 @@ function isObject(input) {
 
 /***/ }),
 
-/***/ 195:
+/***/ 188:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -377,7 +363,7 @@ function isDate(input) {
 
 /***/ }),
 
-/***/ 196:
+/***/ 189:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -393,12 +379,12 @@ function map(arr, fn) {
 
 /***/ }),
 
-/***/ 197:
+/***/ 190:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = compareArrays;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__to_int__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__to_int__ = __webpack_require__(5);
 
 
 // compare two arrays, return the number of differences
@@ -419,7 +405,7 @@ function compareArrays(array1, array2, dontConvert) {
 
 /***/ }),
 
-/***/ 198:
+/***/ 191:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -436,7 +422,7 @@ function absFloor (number) {
 
 /***/ }),
 
-/***/ 199:
+/***/ 192:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -446,14 +432,14 @@ function absFloor (number) {
 /* unused harmony export localeFirstDayOfYear */
 /* harmony export (immutable) */ __webpack_exports__["c"] = getSetWeek;
 /* harmony export (immutable) */ __webpack_exports__["b"] = getSetISOWeek;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_to_int__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__create_local__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__week_calendar_utils__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_to_int__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__create_local__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__week_calendar_utils__ = __webpack_require__(45);
 
 
 
@@ -499,7 +485,7 @@ function localeWeek (mom) {
 
 var defaultLocaleWeek = {
     dow : 0, // Sunday is the first day of the week.
-    doy : 6  // The week that contains Jan 1st is the first week of the year.
+    doy : 6  // The week that contains Jan 6th is the first week of the year.
 };
 
 function localeFirstDayOfWeek () {
@@ -525,19 +511,7 @@ function getSetISOWeek (input) {
 
 /***/ }),
 
-/***/ 20:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = isFunction;
-function isFunction(input) {
-    return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
-}
-
-
-/***/ }),
-
-/***/ 200:
+/***/ 193:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -545,16 +519,16 @@ function isFunction(input) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return defaultLocaleMeridiemParse; });
 /* unused harmony export localeMeridiem */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getSetHour; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_to_int__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_zero_fill__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__create_parsing_flags__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_to_int__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_zero_fill__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__create_parsing_flags__ = __webpack_require__(13);
 
 
 
@@ -703,14 +677,14 @@ var getSetHour = Object(__WEBPACK_IMPORTED_MODULE_0__moment_get_set__["b" /* mak
 
 /***/ }),
 
-/***/ 201:
+/***/ 194:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = checkOverflow;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__units_month__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__units_constants__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_parsing_flags__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__units_month__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__units_constants__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_parsing_flags__ = __webpack_require__(13);
 
 
 
@@ -749,21 +723,21 @@ function checkOverflow (m) {
 
 /***/ }),
 
-/***/ 202:
+/***/ 195:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = configFromISO;
 /* harmony export (immutable) */ __webpack_exports__["b"] = configFromRFC2822;
 /* harmony export (immutable) */ __webpack_exports__["c"] = configFromString;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__from_string_and_format__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__date_from_array__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__from_array__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_hooks__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_deprecate__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parsing_flags__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__units_month__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__units_day_of_week__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__from_string_and_format__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__date_from_array__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__from_array__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_hooks__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_deprecate__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parsing_flags__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__units_month__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__units_day_of_week__ = __webpack_require__(46);
 
 
 
@@ -894,7 +868,7 @@ function untruncateYear(yearStr) {
 
 function preprocessRFC2822(s) {
     // Remove comments and folding whitespace and replace multiple-spaces with a single space
-    return s.replace(/\([^)]*\)|[\n\t]/g, ' ').replace(/(\s\s+)/g, ' ').trim();
+    return s.replace(/\([^)]*\)|[\n\t]/g, ' ').replace(/(\s\s+)/g, ' ').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
 }
 
 function checkWeekday(weekdayStr, parsedInput, config) {
@@ -998,7 +972,7 @@ __WEBPACK_IMPORTED_MODULE_3__utils_hooks__["a" /* hooks */].createFromInputFallb
 
 /***/ }),
 
-/***/ 203:
+/***/ 196:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1006,10 +980,10 @@ __WEBPACK_IMPORTED_MODULE_3__utils_hooks__["a" /* hooks */].createFromInputFallb
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return prototypeMax; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = min;
 /* harmony export (immutable) */ __webpack_exports__["a"] = max;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_deprecate__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_is_array__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_local__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__create_valid__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_deprecate__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_is_array__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_local__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__create_valid__ = __webpack_require__(20);
 
 
 
@@ -1077,19 +1051,19 @@ function max () {
 
 /***/ }),
 
-/***/ 204:
+/***/ 197:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = addSubtract;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return subtract; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__get_set__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__units_month__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__duration_create__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_deprecate__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_hooks__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_abs_round__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__get_set__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__units_month__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__duration_create__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_deprecate__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_hooks__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_abs_round__ = __webpack_require__(200);
 
 
 
@@ -1149,15 +1123,15 @@ var subtract = createAdder(-1, 'subtract');
 
 /***/ }),
 
-/***/ 205:
+/***/ 198:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = Duration;
 /* harmony export (immutable) */ __webpack_exports__["b"] = isDuration;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__units_aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__locale_locales__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__valid_js__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__units_aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__locale_locales__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__valid_js__ = __webpack_require__(199);
 
 
 
@@ -1167,7 +1141,7 @@ function Duration (duration) {
         years = normalizedInput.year || 0,
         quarters = normalizedInput.quarter || 0,
         months = normalizedInput.month || 0,
-        weeks = normalizedInput.week || 0,
+        weeks = normalizedInput.week || normalizedInput.isoWeek || 0,
         days = normalizedInput.day || 0,
         hours = normalizedInput.hour || 0,
         minutes = normalizedInput.minute || 0,
@@ -1206,17 +1180,17 @@ function isDuration (obj) {
 
 /***/ }),
 
-/***/ 206:
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = isDurationValid;
 /* unused harmony export isValid */
 /* harmony export (immutable) */ __webpack_exports__["a"] = createInvalid;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_to_int__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_index_of__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constructor__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__create__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_to_int__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_index_of__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constructor__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__create__ = __webpack_require__(30);
 
 
 
@@ -1257,44 +1231,58 @@ function createInvalid() {
 
 /***/ }),
 
-/***/ 207:
+/***/ 2:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = absRound;
-function absRound (number) {
-    if (number < 0) {
-        return Math.round(-1 * number) * -1;
-    } else {
-        return Math.round(number);
+/* harmony export (immutable) */ __webpack_exports__["a"] = addUnitAlias;
+/* harmony export (immutable) */ __webpack_exports__["c"] = normalizeUnits;
+/* harmony export (immutable) */ __webpack_exports__["b"] = normalizeObjectUnits;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_has_own_prop__ = __webpack_require__(12);
+
+
+var aliases = {};
+
+function addUnitAlias (unit, shorthand) {
+    var lowerCase = unit.toLowerCase();
+    aliases[lowerCase] = aliases[lowerCase + 's'] = aliases[shorthand] = unit;
+}
+
+function normalizeUnits(units) {
+    return typeof units === 'string' ? aliases[units] || aliases[units.toLowerCase()] : undefined;
+}
+
+function normalizeObjectUnits(inputObject) {
+    var normalizedInput = {},
+        normalizedProp,
+        prop;
+
+    for (prop in inputObject) {
+        if (Object(__WEBPACK_IMPORTED_MODULE_0__utils_has_own_prop__["a" /* default */])(inputObject, prop)) {
+            normalizedProp = normalizeUnits(prop);
+            if (normalizedProp) {
+                normalizedInput[normalizedProp] = inputObject[prop];
+            }
+        }
     }
+
+    return normalizedInput;
 }
+
 
 
 /***/ }),
 
-/***/ 24:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = isUndefined;
-function isUndefined(input) {
-    return input === void 0;
-}
-
-
-/***/ }),
-
-/***/ 25:
+/***/ 20:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = isValid;
 /* harmony export (immutable) */ __webpack_exports__["a"] = createInvalid;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_extend__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utc__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_parsing_flags__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_some__ = __webpack_require__(424);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_extend__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utc__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_parsing_flags__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_some__ = __webpack_require__(372);
 
 
 
@@ -1349,15 +1337,31 @@ function createInvalid (flags) {
 
 /***/ }),
 
-/***/ 26:
+/***/ 200:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = absRound;
+function absRound (number) {
+    if (number < 0) {
+        return Math.round(-1 * number) * -1;
+    } else {
+        return Math.round(number);
+    }
+}
+
+
+/***/ }),
+
+/***/ 21:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = deprecate;
 /* harmony export (immutable) */ __webpack_exports__["b"] = deprecateSimple;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__extend__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hooks__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__is_undefined__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__extend__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hooks__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__is_undefined__ = __webpack_require__(26);
 
 
 
@@ -1417,7 +1421,7 @@ __WEBPACK_IMPORTED_MODULE_1__hooks__["a" /* hooks */].deprecationHandler = null;
 
 /***/ }),
 
-/***/ 27:
+/***/ 22:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1432,23 +1436,23 @@ __WEBPACK_IMPORTED_MODULE_1__hooks__["a" /* hooks */].deprecationHandler = null;
 /* harmony export (immutable) */ __webpack_exports__["d"] = getDaysInMonth;
 /* unused harmony export monthsShortRegex */
 /* unused harmony export monthsRegex */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_has_own_prop__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_hooks__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__constants__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_to_int__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_is_array__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_is_number__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_mod__ = __webpack_require__(435);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__utils_index_of__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__create_utc__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__create_parsing_flags__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__units_year__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_has_own_prop__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_hooks__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__constants__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_to_int__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_is_array__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_is_number__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_mod__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__utils_index_of__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__create_utc__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__create_parsing_flags__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__units_year__ = __webpack_require__(23);
 
 
 
@@ -1743,7 +1747,7 @@ function computeMonthsParse () {
 
 /***/ }),
 
-/***/ 28:
+/***/ 23:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1751,15 +1755,15 @@ function computeMonthsParse () {
 /* harmony export (immutable) */ __webpack_exports__["d"] = isLeapYear;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getSetYear; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = getIsLeapYear;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_hooks__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__constants__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_to_int__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_hooks__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__constants__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_to_int__ = __webpack_require__(5);
 
 
 
@@ -1839,7 +1843,7 @@ function getIsLeapYear () {
 
 /***/ }),
 
-/***/ 32:
+/***/ 25:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1851,12 +1855,24 @@ function isArray(input) {
 
 /***/ }),
 
-/***/ 33:
+/***/ 26:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = isUndefined;
+function isUndefined(input) {
+    return input === void 0;
+}
+
+
+/***/ }),
+
+/***/ 27:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = extend;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__has_own_prop__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__has_own_prop__ = __webpack_require__(12);
 
 
 function extend(a, b) {
@@ -1880,12 +1896,12 @@ function extend(a, b) {
 
 /***/ }),
 
-/***/ 34:
+/***/ 28:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = createUTC;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__from_anything__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__from_anything__ = __webpack_require__(41);
 
 
 function createUTC (input, format, locale, strict) {
@@ -1895,7 +1911,7 @@ function createUTC (input, format, locale, strict) {
 
 /***/ }),
 
-/***/ 35:
+/***/ 29:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1904,42 +1920,163 @@ function createUTC (input, format, locale, strict) {
 function createDate (y, m, d, h, M, s, ms) {
     // can't just apply() to create a date:
     // https://stackoverflow.com/q/181348
-    var date = new Date(y, m, d, h, M, s, ms);
-
+    var date;
     // the date constructor remaps years 0-99 to 1900-1999
-    if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
-        date.setFullYear(y);
+    if (y < 100 && y >= 0) {
+        // preserve leap years using a full 400 year cycle, then reset
+        date = new Date(y + 400, m, d, h, M, s, ms);
+        if (isFinite(date.getFullYear())) {
+            date.setFullYear(y);
+        }
+    } else {
+        date = new Date(y, m, d, h, M, s, ms);
     }
+
     return date;
 }
 
 function createUTCDate (y) {
-    var date = new Date(Date.UTC.apply(null, arguments));
-
+    var date;
     // the Date.UTC function remaps years 0-99 to 1900-1999
-    if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
-        date.setUTCFullYear(y);
+    if (y < 100 && y >= 0) {
+        var args = Array.prototype.slice.call(arguments);
+        // preserve leap years using a full 400 year cycle, then reset
+        args[0] = y + 400;
+        date = new Date(Date.UTC.apply(null, args));
+        if (isFinite(date.getUTCFullYear())) {
+            date.setUTCFullYear(y);
+        }
+    } else {
+        date = new Date(Date.UTC.apply(null, arguments));
     }
+
     return date;
 }
 
 
 /***/ }),
 
-/***/ 36:
+/***/ 3:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return formattingTokens; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return formatTokenFunctions; });
+/* harmony export (immutable) */ __webpack_exports__["a"] = addFormatToken;
+/* harmony export (immutable) */ __webpack_exports__["c"] = formatMoment;
+/* harmony export (immutable) */ __webpack_exports__["b"] = expandFormat;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_zero_fill__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_is_function__ = __webpack_require__(16);
+
+
+
+var formattingTokens = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|YYYYYY|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g;
+
+var localFormattingTokens = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g;
+
+var formatFunctions = {};
+
+var formatTokenFunctions = {};
+
+// token:    'M'
+// padded:   ['MM', 2]
+// ordinal:  'Mo'
+// callback: function () { this.month() + 1 }
+function addFormatToken (token, padded, ordinal, callback) {
+    var func = callback;
+    if (typeof callback === 'string') {
+        func = function () {
+            return this[callback]();
+        };
+    }
+    if (token) {
+        formatTokenFunctions[token] = func;
+    }
+    if (padded) {
+        formatTokenFunctions[padded[0]] = function () {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__utils_zero_fill__["a" /* default */])(func.apply(this, arguments), padded[1], padded[2]);
+        };
+    }
+    if (ordinal) {
+        formatTokenFunctions[ordinal] = function () {
+            return this.localeData().ordinal(func.apply(this, arguments), token);
+        };
+    }
+}
+
+function removeFormattingTokens(input) {
+    if (input.match(/\[[\s\S]/)) {
+        return input.replace(/^\[|\]$/g, '');
+    }
+    return input.replace(/\\/g, '');
+}
+
+function makeFormatFunction(format) {
+    var array = format.match(formattingTokens), i, length;
+
+    for (i = 0, length = array.length; i < length; i++) {
+        if (formatTokenFunctions[array[i]]) {
+            array[i] = formatTokenFunctions[array[i]];
+        } else {
+            array[i] = removeFormattingTokens(array[i]);
+        }
+    }
+
+    return function (mom) {
+        var output = '', i;
+        for (i = 0; i < length; i++) {
+            output += Object(__WEBPACK_IMPORTED_MODULE_1__utils_is_function__["a" /* default */])(array[i]) ? array[i].call(mom, format) : array[i];
+        }
+        return output;
+    };
+}
+
+// format date using native date object
+function formatMoment(m, format) {
+    if (!m.isValid()) {
+        return m.localeData().invalidDate();
+    }
+
+    format = expandFormat(format, m.localeData());
+    formatFunctions[format] = formatFunctions[format] || makeFormatFunction(format);
+
+    return formatFunctions[format](m);
+}
+
+function expandFormat(format, locale) {
+    var i = 5;
+
+    function replaceLongDateFormatTokens(input) {
+        return locale.longDateFormat(input) || input;
+    }
+
+    localFormattingTokens.lastIndex = 0;
+    while (i >= 0 && localFormattingTokens.test(format)) {
+        format = format.replace(localFormattingTokens, replaceLongDateFormatTokens);
+        localFormattingTokens.lastIndex = 0;
+        i -= 1;
+    }
+
+    return format;
+}
+
+
+/***/ }),
+
+/***/ 30:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = createDuration;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constructor__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_is_number__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_to_int__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_abs_round__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_has_own_prop__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__units_constants__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__units_offset__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__create_local__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__valid__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constructor__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_is_number__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_to_int__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_abs_round__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_has_own_prop__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__units_constants__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__units_offset__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__create_local__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__valid__ = __webpack_require__(199);
 
 
 
@@ -1990,7 +2127,7 @@ function createDuration (input, key) {
             ms : Object(__WEBPACK_IMPORTED_MODULE_2__utils_to_int__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_3__utils_abs_round__["a" /* default */])(match[__WEBPACK_IMPORTED_MODULE_5__units_constants__["c" /* MILLISECOND */]] * 1000)) * sign // the millisecond decimal point is included in the match
         };
     } else if (!!(match = isoRegex.exec(input))) {
-        sign = (match[1] === '-') ? -1 : (match[1] === '+') ? 1 : 1;
+        sign = (match[1] === '-') ? -1 : 1;
         duration = {
             y : parseIso(match[2], sign),
             M : parseIso(match[3], sign),
@@ -2032,7 +2169,7 @@ function parseIso (inp, sign) {
 }
 
 function positiveMomentsDifference(base, other) {
-    var res = {milliseconds: 0, months: 0};
+    var res = {};
 
     res.months = other.month() - base.month() +
         (other.year() - base.year()) * 12;
@@ -2066,7 +2203,7 @@ function momentsDifference(base, other) {
 
 /***/ }),
 
-/***/ 38:
+/***/ 32:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2078,19 +2215,19 @@ function isNumber(input) {
 
 /***/ }),
 
-/***/ 39:
+/***/ 33:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = configFromArray;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_hooks__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__date_from_array__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__units_year__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__units_week_calendar_utils__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__units_constants__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__local__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_defaults__ = __webpack_require__(437);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__parsing_flags__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_hooks__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__date_from_array__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__units_year__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__units_week_calendar_utils__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__units_constants__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__local__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_defaults__ = __webpack_require__(385);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__parsing_flags__ = __webpack_require__(13);
 
 
 
@@ -2218,13 +2355,13 @@ function dayOfYearFromWeekInfo(config) {
                 weekdayOverflow = true;
             }
         } else if (w.e != null) {
-            // local weekday -- counting starts from begining of week
+            // local weekday -- counting starts from beginning of week
             weekday = w.e + dow;
             if (w.e < 0 || w.e > 6) {
                 weekdayOverflow = true;
             }
         } else {
-            // default to begining of week
+            // default to beginning of week
             weekday = dow;
         }
     }
@@ -2242,49 +2379,7 @@ function dayOfYearFromWeekInfo(config) {
 
 /***/ }),
 
-/***/ 4:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = addUnitAlias;
-/* harmony export (immutable) */ __webpack_exports__["c"] = normalizeUnits;
-/* harmony export (immutable) */ __webpack_exports__["b"] = normalizeObjectUnits;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_has_own_prop__ = __webpack_require__(14);
-
-
-var aliases = {};
-
-function addUnitAlias (unit, shorthand) {
-    var lowerCase = unit.toLowerCase();
-    aliases[lowerCase] = aliases[lowerCase + 's'] = aliases[shorthand] = unit;
-}
-
-function normalizeUnits(units) {
-    return typeof units === 'string' ? aliases[units] || aliases[units.toLowerCase()] : undefined;
-}
-
-function normalizeObjectUnits(inputObject) {
-    var normalizedInput = {},
-        normalizedProp,
-        prop;
-
-    for (prop in inputObject) {
-        if (Object(__WEBPACK_IMPORTED_MODULE_0__utils_has_own_prop__["a" /* default */])(inputObject, prop)) {
-            normalizedProp = normalizeUnits(prop);
-            if (normalizedProp) {
-                normalizedInput[normalizedProp] = inputObject[prop];
-            }
-        }
-    }
-
-    return normalizedInput;
-}
-
-
-
-/***/ }),
-
-/***/ 40:
+/***/ 34:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2300,21 +2395,21 @@ function normalizeObjectUnits(inputObject) {
 /* harmony export (immutable) */ __webpack_exports__["g"] = isLocal;
 /* harmony export (immutable) */ __webpack_exports__["i"] = isUtcOffset;
 /* harmony export (immutable) */ __webpack_exports__["h"] = isUtc;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_zero_fill__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__duration_create__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__moment_add_subtract__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__moment_constructor__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__create_local__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__create_from_anything__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__create_utc__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_is_date__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_to_int__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_is_undefined__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__utils_compare_arrays__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__utils_hooks__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_zero_fill__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__duration_create__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__moment_add_subtract__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__moment_constructor__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__create_local__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__create_from_anything__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__create_utc__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_is_date__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_to_int__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_is_undefined__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__utils_compare_arrays__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__utils_hooks__ = __webpack_require__(4);
 
 
 
@@ -2554,28 +2649,28 @@ function isUtc () {
 
 /***/ }),
 
-/***/ 421:
+/***/ 369:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(422);
+module.exports = __webpack_require__(370);
 
 
 /***/ }),
 
-/***/ 422:
+/***/ 370:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createUnix", function() { return createUnix; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createInZone", function() { return createInZone; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__create_local__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create_utc__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_valid__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constructor__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__min_max__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__now__ = __webpack_require__(439);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__prototype__ = __webpack_require__(440);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__create_local__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create_utc__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_valid__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constructor__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__min_max__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__now__ = __webpack_require__(387);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__prototype__ = __webpack_require__(388);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "now", function() { return __WEBPACK_IMPORTED_MODULE_5__now__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "min", function() { return __WEBPACK_IMPORTED_MODULE_4__min_max__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "max", function() { return __WEBPACK_IMPORTED_MODULE_4__min_max__["a"]; });
@@ -2605,7 +2700,7 @@ function createInZone () {
 
 /***/ }),
 
-/***/ 423:
+/***/ 371:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2627,7 +2722,7 @@ function isObjectEmpty(obj) {
 
 /***/ }),
 
-/***/ 424:
+/***/ 372:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2655,7 +2750,7 @@ if (Array.prototype.some) {
 
 /***/ }),
 
-/***/ 425:
+/***/ 373:
 /***/ (function(module, exports) {
 
 module.exports = function(originalModule) {
@@ -2686,16 +2781,16 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
-/***/ 426:
+/***/ 374:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export set */
 /* harmony export (immutable) */ __webpack_exports__["a"] = mergeConfigs;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_is_function__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_extend__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_is_object__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_has_own_prop__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_is_function__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_extend__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_is_object__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_has_own_prop__ = __webpack_require__(12);
 
 
 
@@ -2749,7 +2844,7 @@ function mergeConfigs(parentConfig, childConfig) {
 
 /***/ }),
 
-/***/ 427:
+/***/ 375:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2763,12 +2858,12 @@ function Locale(config) {
 
 /***/ }),
 
-/***/ 428:
+/***/ 376:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return keys; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__has_own_prop__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__has_own_prop__ = __webpack_require__(12);
 
 
 var keys;
@@ -2792,20 +2887,20 @@ if (Object.keys) {
 
 /***/ }),
 
-/***/ 429:
+/***/ 377:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return baseConfig; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__calendar__ = __webpack_require__(430);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__formats__ = __webpack_require__(431);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__invalid__ = __webpack_require__(432);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ordinal__ = __webpack_require__(433);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__relative__ = __webpack_require__(434);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__units_month__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__units_week__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__units_day_of_week__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__units_hour__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__calendar__ = __webpack_require__(378);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__formats__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__invalid__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ordinal__ = __webpack_require__(381);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__relative__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__units_month__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__units_week__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__units_day_of_week__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__units_hour__ = __webpack_require__(193);
 
 
 
@@ -2847,13 +2942,13 @@ var baseConfig = {
 
 /***/ }),
 
-/***/ 430:
+/***/ 378:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return defaultCalendar; });
 /* unused harmony export calendar */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_is_function__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_is_function__ = __webpack_require__(16);
 var defaultCalendar = {
     sameDay : '[Today at] LT',
     nextDay : '[Tomorrow at] LT',
@@ -2873,7 +2968,7 @@ function calendar (key, mom, now) {
 
 /***/ }),
 
-/***/ 431:
+/***/ 379:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2906,7 +3001,7 @@ function longDateFormat (key) {
 
 /***/ }),
 
-/***/ 432:
+/***/ 380:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2921,7 +3016,7 @@ function invalidDate () {
 
 /***/ }),
 
-/***/ 433:
+/***/ 381:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2939,14 +3034,14 @@ function ordinal (number) {
 
 /***/ }),
 
-/***/ 434:
+/***/ 382:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return defaultRelativeTime; });
 /* unused harmony export relativeTime */
 /* unused harmony export pastFuture */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_is_function__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_is_function__ = __webpack_require__(16);
 var defaultRelativeTime = {
     future : 'in %s',
     past   : '%s ago',
@@ -2981,7 +3076,7 @@ function pastFuture (diff, output) {
 
 /***/ }),
 
-/***/ 435:
+/***/ 383:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2993,16 +3088,16 @@ function mod(n, x) {
 
 /***/ }),
 
-/***/ 436:
+/***/ 384:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = configFromStringAndArray;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_constructor__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__from_string_and_format__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parsing_flags__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__valid__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_extend__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_constructor__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__from_string_and_format__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parsing_flags__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__valid__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_extend__ = __webpack_require__(27);
 
 
 
@@ -3057,7 +3152,7 @@ function configFromStringAndArray(config) {
 
 /***/ }),
 
-/***/ 437:
+/***/ 385:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3076,14 +3171,14 @@ function defaults(a, b, c) {
 
 /***/ }),
 
-/***/ 438:
+/***/ 386:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = configFromObject;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__units_aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__from_array__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_map__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__units_aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__from_array__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_map__ = __webpack_require__(189);
 
 
 
@@ -3104,7 +3199,7 @@ function configFromObject(config) {
 
 /***/ }),
 
-/***/ 439:
+/***/ 387:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3116,41 +3211,41 @@ var now = function () {
 
 /***/ }),
 
-/***/ 440:
+/***/ 388:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constructor__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__add_subtract__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__calendar__ = __webpack_require__(441);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__clone__ = __webpack_require__(442);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compare__ = __webpack_require__(443);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__diff__ = __webpack_require__(444);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__format__ = __webpack_require__(445);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__from__ = __webpack_require__(446);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__to__ = __webpack_require__(447);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__get_set__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__locale__ = __webpack_require__(448);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__min_max__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__start_end_of__ = __webpack_require__(449);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__to_type__ = __webpack_require__(450);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__valid__ = __webpack_require__(451);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__creation_data__ = __webpack_require__(452);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__units_year__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__units_week_year__ = __webpack_require__(453);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__units_quarter__ = __webpack_require__(454);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__units_month__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__units_week__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__units_day_of_month__ = __webpack_require__(455);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__units_day_of_week__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__units_day_of_year__ = __webpack_require__(456);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__units_hour__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__units_minute__ = __webpack_require__(457);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__units_second__ = __webpack_require__(458);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__units_millisecond__ = __webpack_require__(459);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__units_offset__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__units_timezone__ = __webpack_require__(460);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__utils_deprecate__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constructor__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__add_subtract__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__calendar__ = __webpack_require__(389);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__clone__ = __webpack_require__(390);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compare__ = __webpack_require__(391);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__diff__ = __webpack_require__(392);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__format__ = __webpack_require__(393);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__from__ = __webpack_require__(394);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__to__ = __webpack_require__(395);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__get_set__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__locale__ = __webpack_require__(396);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__min_max__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__start_end_of__ = __webpack_require__(397);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__to_type__ = __webpack_require__(398);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__valid__ = __webpack_require__(399);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__creation_data__ = __webpack_require__(400);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__units_year__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__units_week_year__ = __webpack_require__(401);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__units_quarter__ = __webpack_require__(402);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__units_month__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__units_week__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__units_day_of_month__ = __webpack_require__(403);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__units_day_of_week__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__units_day_of_year__ = __webpack_require__(404);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__units_hour__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__units_minute__ = __webpack_require__(405);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__units_second__ = __webpack_require__(406);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__units_millisecond__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__units_offset__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__units_timezone__ = __webpack_require__(408);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__utils_deprecate__ = __webpack_require__(21);
 
 
 var proto = __WEBPACK_IMPORTED_MODULE_0__constructor__["a" /* Moment */].prototype;
@@ -3293,16 +3388,16 @@ proto.isDSTShifted = Object(__WEBPACK_IMPORTED_MODULE_30__utils_deprecate__["a" 
 
 /***/ }),
 
-/***/ 441:
+/***/ 389:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export getCalendarFormat */
 /* harmony export (immutable) */ __webpack_exports__["a"] = calendar;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__create_local__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__units_offset__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_is_function__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_hooks__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__create_local__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__units_offset__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_is_function__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_hooks__ = __webpack_require__(4);
 
 
 
@@ -3333,12 +3428,12 @@ function calendar (time, formats) {
 
 /***/ }),
 
-/***/ 442:
+/***/ 390:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = clone;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constructor__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constructor__ = __webpack_require__(14);
 
 
 function clone () {
@@ -3348,7 +3443,7 @@ function clone () {
 
 /***/ }),
 
-/***/ 443:
+/***/ 391:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3358,11 +3453,9 @@ function clone () {
 /* harmony export (immutable) */ __webpack_exports__["d"] = isSame;
 /* harmony export (immutable) */ __webpack_exports__["e"] = isSameOrAfter;
 /* harmony export (immutable) */ __webpack_exports__["f"] = isSameOrBefore;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constructor__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__units_aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_local__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_is_undefined__ = __webpack_require__(24);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constructor__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__units_aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_local__ = __webpack_require__(10);
 
 
 
@@ -3372,7 +3465,7 @@ function isAfter (input, units) {
     if (!(this.isValid() && localInput.isValid())) {
         return false;
     }
-    units = Object(__WEBPACK_IMPORTED_MODULE_1__units_aliases__["c" /* normalizeUnits */])(!Object(__WEBPACK_IMPORTED_MODULE_3__utils_is_undefined__["a" /* default */])(units) ? units : 'millisecond');
+    units = Object(__WEBPACK_IMPORTED_MODULE_1__units_aliases__["c" /* normalizeUnits */])(units) || 'millisecond';
     if (units === 'millisecond') {
         return this.valueOf() > localInput.valueOf();
     } else {
@@ -3385,7 +3478,7 @@ function isBefore (input, units) {
     if (!(this.isValid() && localInput.isValid())) {
         return false;
     }
-    units = Object(__WEBPACK_IMPORTED_MODULE_1__units_aliases__["c" /* normalizeUnits */])(!Object(__WEBPACK_IMPORTED_MODULE_3__utils_is_undefined__["a" /* default */])(units) ? units : 'millisecond');
+    units = Object(__WEBPACK_IMPORTED_MODULE_1__units_aliases__["c" /* normalizeUnits */])(units) || 'millisecond';
     if (units === 'millisecond') {
         return this.valueOf() < localInput.valueOf();
     } else {
@@ -3394,9 +3487,14 @@ function isBefore (input, units) {
 }
 
 function isBetween (from, to, units, inclusivity) {
+    var localFrom = Object(__WEBPACK_IMPORTED_MODULE_0__constructor__["c" /* isMoment */])(from) ? from : Object(__WEBPACK_IMPORTED_MODULE_2__create_local__["a" /* createLocal */])(from),
+        localTo = Object(__WEBPACK_IMPORTED_MODULE_0__constructor__["c" /* isMoment */])(to) ? to : Object(__WEBPACK_IMPORTED_MODULE_2__create_local__["a" /* createLocal */])(to);
+    if (!(this.isValid() && localFrom.isValid() && localTo.isValid())) {
+        return false;
+    }
     inclusivity = inclusivity || '()';
-    return (inclusivity[0] === '(' ? this.isAfter(from, units) : !this.isBefore(from, units)) &&
-        (inclusivity[1] === ')' ? this.isBefore(to, units) : !this.isAfter(to, units));
+    return (inclusivity[0] === '(' ? this.isAfter(localFrom, units) : !this.isBefore(localFrom, units)) &&
+        (inclusivity[1] === ')' ? this.isBefore(localTo, units) : !this.isAfter(localTo, units));
 }
 
 function isSame (input, units) {
@@ -3405,7 +3503,7 @@ function isSame (input, units) {
     if (!(this.isValid() && localInput.isValid())) {
         return false;
     }
-    units = Object(__WEBPACK_IMPORTED_MODULE_1__units_aliases__["c" /* normalizeUnits */])(units || 'millisecond');
+    units = Object(__WEBPACK_IMPORTED_MODULE_1__units_aliases__["c" /* normalizeUnits */])(units) || 'millisecond';
     if (units === 'millisecond') {
         return this.valueOf() === localInput.valueOf();
     } else {
@@ -3415,24 +3513,24 @@ function isSame (input, units) {
 }
 
 function isSameOrAfter (input, units) {
-    return this.isSame(input, units) || this.isAfter(input,units);
+    return this.isSame(input, units) || this.isAfter(input, units);
 }
 
 function isSameOrBefore (input, units) {
-    return this.isSame(input, units) || this.isBefore(input,units);
+    return this.isSame(input, units) || this.isBefore(input, units);
 }
 
 
 /***/ }),
 
-/***/ 444:
+/***/ 392:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = diff;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_abs_floor__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__units_offset__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__units_aliases__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_abs_floor__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__units_offset__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__units_aliases__ = __webpack_require__(2);
 
 
 
@@ -3495,7 +3593,7 @@ function monthDiff (a, b) {
 
 /***/ }),
 
-/***/ 445:
+/***/ 393:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3503,9 +3601,9 @@ function monthDiff (a, b) {
 /* harmony export (immutable) */ __webpack_exports__["c"] = toISOString;
 /* harmony export (immutable) */ __webpack_exports__["b"] = inspect;
 /* harmony export (immutable) */ __webpack_exports__["a"] = format;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_hooks__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_is_function__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_hooks__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_is_function__ = __webpack_require__(16);
 
 
 
@@ -3572,15 +3670,15 @@ function format (inputString) {
 
 /***/ }),
 
-/***/ 446:
+/***/ 394:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = from;
 /* harmony export (immutable) */ __webpack_exports__["b"] = fromNow;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__duration_create__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create_local__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__moment_constructor__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__duration_create__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create_local__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__moment_constructor__ = __webpack_require__(14);
 
 
 
@@ -3602,15 +3700,15 @@ function fromNow (withoutSuffix) {
 
 /***/ }),
 
-/***/ 447:
+/***/ 395:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = to;
 /* harmony export (immutable) */ __webpack_exports__["b"] = toNow;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__duration_create__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create_local__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__moment_constructor__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__duration_create__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create_local__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__moment_constructor__ = __webpack_require__(14);
 
 
 
@@ -3632,15 +3730,15 @@ function toNow (withoutSuffix) {
 
 /***/ }),
 
-/***/ 448:
+/***/ 396:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = locale;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return lang; });
 /* harmony export (immutable) */ __webpack_exports__["c"] = localeData;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__locale_locales__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_deprecate__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__locale_locales__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_deprecate__ = __webpack_require__(21);
 
 
 
@@ -3679,77 +3777,147 @@ function localeData () {
 
 /***/ }),
 
-/***/ 449:
+/***/ 397:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = startOf;
 /* harmony export (immutable) */ __webpack_exports__["a"] = endOf;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__units_aliases__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__units_aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_hooks__ = __webpack_require__(4);
 
+
+
+var MS_PER_SECOND = 1000;
+var MS_PER_MINUTE = 60 * MS_PER_SECOND;
+var MS_PER_HOUR = 60 * MS_PER_MINUTE;
+var MS_PER_400_YEARS = (365 * 400 + 97) * 24 * MS_PER_HOUR;
+
+// actual modulo - handles negative numbers (for dates before 1970):
+function mod(dividend, divisor) {
+    return (dividend % divisor + divisor) % divisor;
+}
+
+function localStartOfDate(y, m, d) {
+    // the date constructor remaps years 0-99 to 1900-1999
+    if (y < 100 && y >= 0) {
+        // preserve leap years using a full 400 year cycle, then reset
+        return new Date(y + 400, m, d) - MS_PER_400_YEARS;
+    } else {
+        return new Date(y, m, d).valueOf();
+    }
+}
+
+function utcStartOfDate(y, m, d) {
+    // Date.UTC remaps years 0-99 to 1900-1999
+    if (y < 100 && y >= 0) {
+        // preserve leap years using a full 400 year cycle, then reset
+        return Date.UTC(y + 400, m, d) - MS_PER_400_YEARS;
+    } else {
+        return Date.UTC(y, m, d);
+    }
+}
 
 function startOf (units) {
+    var time;
     units = Object(__WEBPACK_IMPORTED_MODULE_0__units_aliases__["c" /* normalizeUnits */])(units);
-    // the following switch intentionally omits break keywords
-    // to utilize falling through the cases.
+    if (units === undefined || units === 'millisecond' || !this.isValid()) {
+        return this;
+    }
+
+    var startOfDate = this._isUTC ? utcStartOfDate : localStartOfDate;
+
     switch (units) {
         case 'year':
-            this.month(0);
-            /* falls through */
+            time = startOfDate(this.year(), 0, 1);
+            break;
         case 'quarter':
+            time = startOfDate(this.year(), this.month() - this.month() % 3, 1);
+            break;
         case 'month':
-            this.date(1);
-            /* falls through */
+            time = startOfDate(this.year(), this.month(), 1);
+            break;
         case 'week':
+            time = startOfDate(this.year(), this.month(), this.date() - this.weekday());
+            break;
         case 'isoWeek':
+            time = startOfDate(this.year(), this.month(), this.date() - (this.isoWeekday() - 1));
+            break;
         case 'day':
         case 'date':
-            this.hours(0);
-            /* falls through */
+            time = startOfDate(this.year(), this.month(), this.date());
+            break;
         case 'hour':
-            this.minutes(0);
-            /* falls through */
+            time = this._d.valueOf();
+            time -= mod(time + (this._isUTC ? 0 : this.utcOffset() * MS_PER_MINUTE), MS_PER_HOUR);
+            break;
         case 'minute':
-            this.seconds(0);
-            /* falls through */
+            time = this._d.valueOf();
+            time -= mod(time, MS_PER_MINUTE);
+            break;
         case 'second':
-            this.milliseconds(0);
+            time = this._d.valueOf();
+            time -= mod(time, MS_PER_SECOND);
+            break;
     }
 
-    // weeks are a special case
-    if (units === 'week') {
-        this.weekday(0);
-    }
-    if (units === 'isoWeek') {
-        this.isoWeekday(1);
-    }
-
-    // quarters are also special
-    if (units === 'quarter') {
-        this.month(Math.floor(this.month() / 3) * 3);
-    }
-
+    this._d.setTime(time);
+    __WEBPACK_IMPORTED_MODULE_1__utils_hooks__["a" /* hooks */].updateOffset(this, true);
     return this;
 }
 
 function endOf (units) {
+    var time;
     units = Object(__WEBPACK_IMPORTED_MODULE_0__units_aliases__["c" /* normalizeUnits */])(units);
-    if (units === undefined || units === 'millisecond') {
+    if (units === undefined || units === 'millisecond' || !this.isValid()) {
         return this;
     }
 
-    // 'date' is an alias for 'day', so it should be considered as such.
-    if (units === 'date') {
-        units = 'day';
+    var startOfDate = this._isUTC ? utcStartOfDate : localStartOfDate;
+
+    switch (units) {
+        case 'year':
+            time = startOfDate(this.year() + 1, 0, 1) - 1;
+            break;
+        case 'quarter':
+            time = startOfDate(this.year(), this.month() - this.month() % 3 + 3, 1) - 1;
+            break;
+        case 'month':
+            time = startOfDate(this.year(), this.month() + 1, 1) - 1;
+            break;
+        case 'week':
+            time = startOfDate(this.year(), this.month(), this.date() - this.weekday() + 7) - 1;
+            break;
+        case 'isoWeek':
+            time = startOfDate(this.year(), this.month(), this.date() - (this.isoWeekday() - 1) + 7) - 1;
+            break;
+        case 'day':
+        case 'date':
+            time = startOfDate(this.year(), this.month(), this.date() + 1) - 1;
+            break;
+        case 'hour':
+            time = this._d.valueOf();
+            time += MS_PER_HOUR - mod(time + (this._isUTC ? 0 : this.utcOffset() * MS_PER_MINUTE), MS_PER_HOUR) - 1;
+            break;
+        case 'minute':
+            time = this._d.valueOf();
+            time += MS_PER_MINUTE - mod(time, MS_PER_MINUTE) - 1;
+            break;
+        case 'second':
+            time = this._d.valueOf();
+            time += MS_PER_SECOND - mod(time, MS_PER_SECOND) - 1;
+            break;
     }
 
-    return this.startOf(units).add(1, (units === 'isoWeek' ? 'week' : units)).subtract(1, 'ms');
+    this._d.setTime(time);
+    __WEBPACK_IMPORTED_MODULE_1__utils_hooks__["a" /* hooks */].updateOffset(this, true);
+    return this;
 }
 
 
 /***/ }),
 
-/***/ 450:
+/***/ 398:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3797,16 +3965,16 @@ function toJSON () {
 
 /***/ }),
 
-/***/ 451:
+/***/ 399:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = isValid;
 /* harmony export (immutable) */ __webpack_exports__["c"] = parsingFlags;
 /* harmony export (immutable) */ __webpack_exports__["a"] = invalidAt;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__create_valid__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_extend__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_parsing_flags__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__create_valid__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_extend__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_parsing_flags__ = __webpack_require__(13);
 
 
 
@@ -3826,7 +3994,30 @@ function invalidAt () {
 
 /***/ }),
 
-/***/ 452:
+/***/ 4:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return hooks; });
+/* unused harmony export setHookCallback */
+
+
+var hookCallback;
+
+function hooks () {
+    return hookCallback.apply(null, arguments);
+}
+
+// This is done to register the method called with moment()
+// without creating circular dependencies.
+function setHookCallback (callback) {
+    hookCallback = callback;
+}
+
+
+/***/ }),
+
+/***/ 400:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3844,7 +4035,7 @@ function creationData() {
 
 /***/ }),
 
-/***/ 453:
+/***/ 401:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3852,16 +4043,16 @@ function creationData() {
 /* harmony export (immutable) */ __webpack_exports__["b"] = getSetISOWeekYear;
 /* harmony export (immutable) */ __webpack_exports__["a"] = getISOWeeksInYear;
 /* harmony export (immutable) */ __webpack_exports__["d"] = getWeeksInYear;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__week_calendar_utils__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_to_int__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_hooks__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__create_local__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__create_date_from_array__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__week_calendar_utils__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_to_int__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_hooks__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__create_local__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__create_date_from_array__ = __webpack_require__(29);
 
 
 
@@ -3973,18 +4164,18 @@ function setWeekAll(weekYear, week, weekday, dow, doy) {
 
 /***/ }),
 
-/***/ 454:
+/***/ 402:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = getSetQuarter;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__constants__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_to_int__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__constants__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_to_int__ = __webpack_require__(5);
 
 
 
@@ -4021,19 +4212,19 @@ function getSetQuarter (input) {
 
 /***/ }),
 
-/***/ 455:
+/***/ 403:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getSetDayOfMonth; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_to_int__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_to_int__ = __webpack_require__(5);
 
 
 
@@ -4077,19 +4268,19 @@ var getSetDayOfMonth = Object(__WEBPACK_IMPORTED_MODULE_0__moment_get_set__["b" 
 
 /***/ }),
 
-/***/ 456:
+/***/ 404:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = getSetDayOfYear;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__year__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__create_date_from_array__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_to_int__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__year__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__create_date_from_array__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_to_int__ = __webpack_require__(5);
 
 
 
@@ -4130,18 +4321,18 @@ function getSetDayOfYear (input) {
 
 /***/ }),
 
-/***/ 457:
+/***/ 405:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getSetMinute; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(11);
 
 
 
@@ -4175,18 +4366,18 @@ var getSetMinute = Object(__WEBPACK_IMPORTED_MODULE_0__moment_get_set__["b" /* m
 
 /***/ }),
 
-/***/ 458:
+/***/ 406:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getSetSecond; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(11);
 
 
 
@@ -4220,19 +4411,19 @@ var getSetSecond = Object(__WEBPACK_IMPORTED_MODULE_0__moment_get_set__["b" /* m
 
 /***/ }),
 
-/***/ 459:
+/***/ 407:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getSetMillisecond; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_to_int__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__moment_get_set__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_to_int__ = __webpack_require__(5);
 
 
 
@@ -4306,13 +4497,13 @@ var getSetMillisecond = Object(__WEBPACK_IMPORTED_MODULE_0__moment_get_set__["b"
 
 /***/ }),
 
-/***/ 460:
+/***/ 408:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = getZoneAbbr;
 /* harmony export (immutable) */ __webpack_exports__["b"] = getZoneName;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(3);
 
 
 // FORMATTING
@@ -4333,29 +4524,29 @@ function getZoneName () {
 
 /***/ }),
 
-/***/ 48:
+/***/ 41:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = prepareConfig;
 /* harmony export (immutable) */ __webpack_exports__["a"] = createLocalOrUTC;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_is_array__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_is_object__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_is_object_empty__ = __webpack_require__(423);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_is_undefined__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_is_number__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_is_date__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_map__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__valid__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__moment_constructor__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__locale_locales__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_hooks__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__check_overflow__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__from_string_and_array__ = __webpack_require__(436);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__from_string_and_format__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__from_string__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__from_array__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__from_object__ = __webpack_require__(438);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_is_array__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_is_object__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_is_object_empty__ = __webpack_require__(371);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_is_undefined__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_is_number__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_is_date__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_map__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__valid__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__moment_constructor__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__locale_locales__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_hooks__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__check_overflow__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__from_string_and_array__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__from_string_and_format__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__from_string__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__from_array__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__from_object__ = __webpack_require__(386);
 
 
 
@@ -4470,7 +4661,7 @@ function createLocalOrUTC (input, format, locale, strict, isUTC) {
 
 /***/ }),
 
-/***/ 49:
+/***/ 42:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4479,15 +4670,15 @@ function createLocalOrUTC (input, format, locale, strict, isUTC) {
 /* unused harmony export updateLocale */
 /* harmony export (immutable) */ __webpack_exports__["a"] = getLocale;
 /* unused harmony export listLocales */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_is_array__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_has_own_prop__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_is_undefined__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_compare_arrays__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_deprecate__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__set__ = __webpack_require__(426);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constructor__ = __webpack_require__(427);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_keys__ = __webpack_require__(428);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__base_config__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_is_array__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_has_own_prop__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_is_undefined__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_compare_arrays__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_deprecate__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__set__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constructor__ = __webpack_require__(375);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_keys__ = __webpack_require__(376);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__base_config__ = __webpack_require__(377);
 var require;
 
 
@@ -4686,118 +4877,11 @@ function listLocales() {
     return Object(__WEBPACK_IMPORTED_MODULE_7__utils_keys__["a" /* default */])(locales);
 }
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(425)(module)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(373)(module)))
 
 /***/ }),
 
-/***/ 5:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return formattingTokens; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return formatTokenFunctions; });
-/* harmony export (immutable) */ __webpack_exports__["a"] = addFormatToken;
-/* harmony export (immutable) */ __webpack_exports__["c"] = formatMoment;
-/* harmony export (immutable) */ __webpack_exports__["b"] = expandFormat;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_zero_fill__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_is_function__ = __webpack_require__(20);
-
-
-
-var formattingTokens = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|YYYYYY|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g;
-
-var localFormattingTokens = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g;
-
-var formatFunctions = {};
-
-var formatTokenFunctions = {};
-
-// token:    'M'
-// padded:   ['MM', 2]
-// ordinal:  'Mo'
-// callback: function () { this.month() + 1 }
-function addFormatToken (token, padded, ordinal, callback) {
-    var func = callback;
-    if (typeof callback === 'string') {
-        func = function () {
-            return this[callback]();
-        };
-    }
-    if (token) {
-        formatTokenFunctions[token] = func;
-    }
-    if (padded) {
-        formatTokenFunctions[padded[0]] = function () {
-            return Object(__WEBPACK_IMPORTED_MODULE_0__utils_zero_fill__["a" /* default */])(func.apply(this, arguments), padded[1], padded[2]);
-        };
-    }
-    if (ordinal) {
-        formatTokenFunctions[ordinal] = function () {
-            return this.localeData().ordinal(func.apply(this, arguments), token);
-        };
-    }
-}
-
-function removeFormattingTokens(input) {
-    if (input.match(/\[[\s\S]/)) {
-        return input.replace(/^\[|\]$/g, '');
-    }
-    return input.replace(/\\/g, '');
-}
-
-function makeFormatFunction(format) {
-    var array = format.match(formattingTokens), i, length;
-
-    for (i = 0, length = array.length; i < length; i++) {
-        if (formatTokenFunctions[array[i]]) {
-            array[i] = formatTokenFunctions[array[i]];
-        } else {
-            array[i] = removeFormattingTokens(array[i]);
-        }
-    }
-
-    return function (mom) {
-        var output = '', i;
-        for (i = 0; i < length; i++) {
-            output += Object(__WEBPACK_IMPORTED_MODULE_1__utils_is_function__["a" /* default */])(array[i]) ? array[i].call(mom, format) : array[i];
-        }
-        return output;
-    };
-}
-
-// format date using native date object
-function formatMoment(m, format) {
-    if (!m.isValid()) {
-        return m.localeData().invalidDate();
-    }
-
-    format = expandFormat(format, m.localeData());
-    formatFunctions[format] = formatFunctions[format] || makeFormatFunction(format);
-
-    return formatFunctions[format](m);
-}
-
-function expandFormat(format, locale) {
-    var i = 5;
-
-    function replaceLongDateFormatTokens(input) {
-        return locale.longDateFormat(input) || input;
-    }
-
-    localFormattingTokens.lastIndex = 0;
-    while (i >= 0 && localFormattingTokens.test(format)) {
-        format = format.replace(localFormattingTokens, replaceLongDateFormatTokens);
-        localFormattingTokens.lastIndex = 0;
-        i -= 1;
-    }
-
-    return format;
-}
-
-
-/***/ }),
-
-/***/ 50:
+/***/ 43:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4813,7 +4897,7 @@ function zeroFill(number, targetLength, forceSign) {
 
 /***/ }),
 
-/***/ 51:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4840,16 +4924,16 @@ if (Array.prototype.indexOf) {
 
 /***/ }),
 
-/***/ 52:
+/***/ 45:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = dayOfYearFromWeeks;
 /* harmony export (immutable) */ __webpack_exports__["b"] = weekOfYear;
 /* harmony export (immutable) */ __webpack_exports__["c"] = weeksInYear;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__year__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create_local__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_date_from_array__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__year__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create_local__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_date_from_array__ = __webpack_require__(29);
 
 
 
@@ -4919,7 +5003,7 @@ function weeksInYear(year, dow, doy) {
 
 /***/ }),
 
-/***/ 53:
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4936,17 +5020,17 @@ function weeksInYear(year, dow, doy) {
 /* unused harmony export weekdaysRegex */
 /* unused harmony export weekdaysShortRegex */
 /* unused harmony export weekdaysMinRegex */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__aliases__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__priorities__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_to_int__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_is_array__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_index_of__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_has_own_prop__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__create_utc__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__create_parsing_flags__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__aliases__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__priorities__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_to_int__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_is_array__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_index_of__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_has_own_prop__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__create_utc__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__create_parsing_flags__ = __webpack_require__(13);
 
 
 
@@ -5045,25 +5129,28 @@ function parseIsoWeekday(input, locale) {
 }
 
 // LOCALES
+function shiftWeekdays (ws, n) {
+    return ws.slice(n, 7).concat(ws.slice(0, n));
+}
 
 var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
 function localeWeekdays (m, format) {
-    if (!m) {
-        return Object(__WEBPACK_IMPORTED_MODULE_6__utils_is_array__["a" /* default */])(this._weekdays) ? this._weekdays :
-            this._weekdays['standalone'];
-    }
-    return Object(__WEBPACK_IMPORTED_MODULE_6__utils_is_array__["a" /* default */])(this._weekdays) ? this._weekdays[m.day()] :
-        this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
+    var weekdays = Object(__WEBPACK_IMPORTED_MODULE_6__utils_is_array__["a" /* default */])(this._weekdays) ? this._weekdays :
+        this._weekdays[(m && m !== true && this._weekdays.isFormat.test(format)) ? 'format' : 'standalone'];
+    return (m === true) ? shiftWeekdays(weekdays, this._week.dow)
+        : (m) ? weekdays[m.day()] : weekdays;
 }
 
 var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
 function localeWeekdaysShort (m) {
-    return (m) ? this._weekdaysShort[m.day()] : this._weekdaysShort;
+    return (m === true) ? shiftWeekdays(this._weekdaysShort, this._week.dow)
+        : (m) ? this._weekdaysShort[m.day()] : this._weekdaysShort;
 }
 
 var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
 function localeWeekdaysMin (m) {
-    return (m) ? this._weekdaysMin[m.day()] : this._weekdaysMin;
+    return (m === true) ? shiftWeekdays(this._weekdaysMin, this._week.dow)
+        : (m) ? this._weekdaysMin[m.day()] : this._weekdaysMin;
 }
 
 function handleStrictParse(weekdayName, format, strict) {
@@ -5149,9 +5236,9 @@ function localeWeekdaysParse (weekdayName, format, strict) {
 
         mom = Object(__WEBPACK_IMPORTED_MODULE_9__create_utc__["a" /* createUTC */])([2000, 1]).day(i);
         if (strict && !this._fullWeekdaysParse[i]) {
-            this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\.?') + '$', 'i');
-            this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\.?') + '$', 'i');
-            this._minWeekdaysParse[i] = new RegExp('^' + this.weekdaysMin(mom, '').replace('.', '\.?') + '$', 'i');
+            this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\\.?') + '$', 'i');
+            this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\\.?') + '$', 'i');
+            this._minWeekdaysParse[i] = new RegExp('^' + this.weekdaysMin(mom, '').replace('.', '\\.?') + '$', 'i');
         }
         if (!this._weekdaysParse[i]) {
             regex = '^' + this.weekdays(mom, '') + '|^' + this.weekdaysShort(mom, '') + '|^' + this.weekdaysMin(mom, '');
@@ -5315,20 +5402,20 @@ function computeWeekdaysParse () {
 
 /***/ }),
 
-/***/ 54:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = configFromStringAndFormat;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__from_string__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__from_array__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parse_regex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_token__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__format_format__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__check_overflow__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__units_constants__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_hooks__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__parsing_flags__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__from_string__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__from_array__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parse_regex__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_token__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__format_format__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__check_overflow__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__units_constants__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_hooks__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__parsing_flags__ = __webpack_require__(13);
 
 
 
@@ -5446,12 +5533,12 @@ function meridiemFixWrap (locale, hour, meridiem) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = toInt;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__abs_floor__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__abs_floor__ = __webpack_require__(191);
 
 
 function toInt(argumentForCoercion) {
@@ -5468,30 +5555,7 @@ function toInt(argumentForCoercion) {
 
 /***/ }),
 
-/***/ 7:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return hooks; });
-/* unused harmony export setHookCallback */
-
-
-var hookCallback;
-
-function hooks () {
-    return hookCallback.apply(null, arguments);
-}
-
-// This is done to register the method called with moment()
-// without creating circular dependencies.
-function setHookCallback (callback) {
-    hookCallback = callback;
-}
-
-
-/***/ }),
-
-/***/ 8:
+/***/ 6:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5515,8 +5579,8 @@ function setHookCallback (callback) {
 /* harmony export (immutable) */ __webpack_exports__["a"] = addRegexToken;
 /* harmony export (immutable) */ __webpack_exports__["b"] = getParseRegexForToken;
 /* harmony export (immutable) */ __webpack_exports__["s"] = regexEscape;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_has_own_prop__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_is_function__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_has_own_prop__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_is_function__ = __webpack_require__(16);
 var match1         = /\d/;            //       0 - 9
 var match2         = /\d\d/;          //      00 - 99
 var match3         = /\d{3}/;         //     000 - 999
@@ -5575,16 +5639,16 @@ function regexEscape(s) {
 
 /***/ }),
 
-/***/ 9:
+/***/ 7:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = addParseToken;
 /* harmony export (immutable) */ __webpack_exports__["c"] = addWeekParseToken;
 /* harmony export (immutable) */ __webpack_exports__["b"] = addTimeToArrayFromToken;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_has_own_prop__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_is_number__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_to_int__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_has_own_prop__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_is_number__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_to_int__ = __webpack_require__(5);
 
 
 
@@ -5617,6 +5681,32 @@ function addTimeToArrayFromToken(token, input, config) {
     if (input != null && Object(__WEBPACK_IMPORTED_MODULE_0__utils_has_own_prop__["a" /* default */])(tokens, token)) {
         tokens[token](input, config._a, config, token);
     }
+}
+
+
+/***/ }),
+
+/***/ 8:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = addUnitPriority;
+/* harmony export (immutable) */ __webpack_exports__["b"] = getPrioritizedUnits;
+var priorities = {};
+
+function addUnitPriority(unit, priority) {
+    priorities[unit] = priority;
+}
+
+function getPrioritizedUnits(unitsObj) {
+    var units = [];
+    for (var u in unitsObj) {
+        units.push({unit: u, priority: priorities[u]});
+    }
+    units.sort(function (a, b) {
+        return a.priority - b.priority;
+    });
+    return units;
 }
 
 

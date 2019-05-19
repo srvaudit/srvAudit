@@ -5,7 +5,7 @@ Route::get('/', 'WelcomeController@show');
 Route::get('/support', 'WelcomeController@support');
 Route::get('/privacy', 'WelcomeController@privacy');
 
-// The docs and stuff
+// The docs
 Route::get('docs', 'DocsController@showRootPage');
 Route::get('docs/{version}/{page?}', 'DocsController@show');
 
@@ -16,12 +16,15 @@ Route::get('/sessions/{id}', 'SessionController@getSession');
 Route::get('/sessions/server/{id}', 'SessionController@getServers');
 Route::get('/sessions/user/{id}', 'SessionController@getUser');
 
+// Search
+Route::get('/searchcommands', 'SearchController@index');
+
 // Installers
 Route::get('/install', 'InstallController@install');
 Route::get('/installcentos', 'InstallController@installcentos');
 Route::get('/dockerinstall', 'InstallController@dockerinstall');
 
-// OAuth apps
+// OAuth
 Route::get('auth/{driver}', ['as' => 'socialAuth', 'uses' => 'Auth\SocialController@redirectToProvider']);
 Route::get('auth/{driver}/callback', ['as' => 'socialAuthCallback', 'uses' => 'Auth\SocialController@handleProviderCallback']);
 

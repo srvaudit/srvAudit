@@ -29,7 +29,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-12 nopadding-small">
-            <div class="table-responsive noborders-small noborders">
+            <div class="table-responsive noborders-small noborders smoothscroll">
                 <table class="table table-sm nowrapp">
                     <thead>
                         <tr>
@@ -68,7 +68,7 @@
 <div id="commands" class="container-fluid">
     <div class="row">
         <div class="col-xs-12 nopadding-small">
-            <div id="clines" class="table-responsive ctable noborders-small">
+            <div id="clines" class="table-responsive ctable noborders-small smoothscroll">
                 <srvaudit-command-list></srvaudit-command-list>
             </div>
         </div>
