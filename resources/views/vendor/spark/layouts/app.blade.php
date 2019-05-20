@@ -111,7 +111,7 @@
             limit: 7,
             templates: {
                 header: '<h3 class="resultsHeader">Sessions</h3>',
-                empty: '<h3 class="resultsHeader">Sessions</h3><div class="ml-3 mr-3">No results...</div>',
+                empty: '<h3 class="resultsHeader">Sessions</h3><div class="ml-3 mr-3" style="margin-left: 20px">No results...</div>',
                 suggestion: Handlebars.compile('<div class="ta-result"><a href="/sessions/@{{sid}}">@{{sid}}</a></div>')
             }
         }).bind('typeahead:select', function(ev, suggestion) {
