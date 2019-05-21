@@ -12,7 +12,7 @@ class SearchController extends Controller
         $data = Command::select(\DB::raw("min(cmd) as cmd, sid"))->orderBy('id', 'desc')->groupBy('sid')->where("cmd", "LIKE", "%".$request->input('query')."%")->get();
 
         foreach($data as $d) {
-            $d->cmd = Str::limit($d->cmd, 10, '...');
+            $d->cmd = Str::limit($d->cmd, 20, '...');
         }
         return response()->json($data);
     }
