@@ -33,7 +33,7 @@
 		<div class="container marketing">
 			<div class="row featurette">
 				<div class="col-md-7">
-					<h2 class="featurette-heading"><span class="glyphicon glyphicon-console glyphicon-2" aria-hidden="true"></span>&nbsp;&nbsp;Audit Controls</h2>
+					<h2 class="featurette-heading"><i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;&nbsp;Audit Controls</h2>
 					<p class="lead">Don't let unathorized changes or a surprise audit get you down. <span style="font-family: courier, serif">srvAudit</span> meets audit control requirements, while integrating with popular tools to alert your team to infrastructure activities and enhancing existing workflows. The days of "asking around" when unexpected changes occur are history.</p>
 				</div>
 				<div class="col-md-5">
@@ -44,7 +44,7 @@
 			<hr class="featurette-divider">
 			<div class="row featurette">
 				<div class="col-md-7 col-md-push-5">
-					  <h2 class="featurette-heading"><span class="glyphicon glyphicon-console glyphicon-2" aria-hidden="true"></span>&nbsp;&nbsp;Session Upgrade</h2>
+					  <h2 class="featurette-heading"><i class="fas fa-terminal" aria-hidden="true"></i>&nbsp;&nbsp;Session Upgrade</h2>
 					  <p class="lead"><span style="font-family: courier, serif">srvAudit</span> will help your team secure and gain visibility into your IT infrastructure. Supercharge your session history with session notifications and insight into each session with extended session and command metadata. Search session command histories for 1 or 1000 nodes in the same interface.</p>
 				</div>
 				<div class="col-md-5 col-md-pull-7">
@@ -55,7 +55,7 @@
 			<hr class="featurette-divider">
 			<div class="row featurette">
 				<div class="col-md-7">
-					  <h2 class="featurette-heading"><span class="glyphicon glyphicon-cloud-upload glyphicon-2" aria-hidden="true"></span>&nbsp;&nbsp;Integrations</h2>
+					  <h2 class="featurette-heading"><i class="fas fa-bezier-curve" aria-hidden="true"></i>&nbsp;&nbsp;Integrations</h2>
 					  <p class="lead">Get notified of new session activity by <span style="font-family: courier, serif">srvAudit</span> or any of our integrations such as <a href="http://slack.com">Slack</a>, and <a href="http://newrelic.com">New Relic</a>. Enforce issue-to-login correlation, and send command history to with <a href="https://github.com">Github</a>, <a href="https://gitlab.org">Gitlab</a>, <a href="http://atlassian.net/software/jira">Jira</a> and <a href="https://www.atlassian.com/software/jira/service-desk">Jira Service Desk</a>, or <a href="http://redmine.org">Redmine</a> project management systems. You can even update issue status and add session notes directly from the shell during logout.</p>
 				</div>
 				<div class="col-md-5">
@@ -66,7 +66,7 @@
 			<hr class="featurette-divider">
 			<div class="row featurette">
 				<div class="col-md-7 col-md-push-5">
-				  <h2 class="featurette-heading"><span class="glyphicon glyphicon-ok glyphicon-2" aria-hidden="true"></span>&nbsp;&nbsp;Automatic Audit</h2>
+				  <h2 class="featurette-heading"><i class="far fa-check-square" aria-hidden="true"></i>&nbsp;&nbsp;Automatic Audit</h2>
 				  <p class="lead"><span style="font-family: courier, serif">srvAudit</span> implements change control at the host login shell - you'll know exactly what was performed during each server login session. We  can help your organization meet SAS-70, SSAE16, HIPPA, and other corporate auditing requirements for your Linux based systems.</p>
 				</div>
 				<div class="col-md-5 col-md-pull-7">
@@ -77,7 +77,7 @@
 			<hr class="featurette-divider">
 			<div class="row featurette">
 				<div class="col-md-7">
-					  <h2 class="featurette-heading"><span class="glyphicon glyphicon-stats glyphicon-2" aria-hidden="true"></span>&nbsp;&nbsp;Enterprise Friendly</h2>
+					  <h2 class="featurette-heading"><i class="fas fa-building" aria-hidden="true"></i>&nbsp;&nbsp;Enterprise Friendly</h2>
 					  <p class="lead"><span style="font-family: courier, serif">srvAudit</span> can help your organization centralize vital change data for easy retrival, lowering TCO of infrastructure and being awesome in general.</p>
 				</div>
 				<div class="col-md-5">
@@ -88,7 +88,7 @@
         <div class="row redrow" id="action">
             <div class="container">
                 <div class="col-xs-12 col-sm-6">
-                    <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> &nbsp;Simple Change Auditing</h2>
+                    <h2><i class="fas fa-list-alt"></i> &nbsp;Simple Change Auditing</h2>
                     <p class="lead">Once srvAudit is installed, session start and end times, session history, server information, and more will be sent to srvAudit and supported integrations. Everyone in your organization will be updated when server sessions are initiated and closed.<br/><br/>  You'll know what tickets are in progress. You'll know when they started and when they finished. And most importantly, you'll know what the user did. <br/><br/>Post session history and notes to your project management or chat system. Post session timelines into New Relic server and application monitoring.</p>
                 </div>
                 <div class="col-xs-12 col-sm-6">
@@ -105,7 +105,7 @@
                 <div class="col-xs-12 install">
                     <h3><br>Install, Audit, Carry on<span> </span></h3><br>
                     <p class="fp"><span style="font-family: courier, serif">srvAudit</span> IS CURRENTLY ALPHA QUALITY, PRE-RELEASE SOFTWARE. IT IS NOT FOR PRODUCTION USE. THIS BUILD IS FOR TESTING ONLY. YOU HAVE BEEN WARNED.</p>
-                     <p class="fp"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> &nbsp;Install Ubuntu 14.04 through 18.04</p>
+                     <p class="fp"><i class="fas fa-sign-in-alt"></i> &nbsp;Install Ubuntu 14.04 through 18.04</p>
                      <div class="code">curl -sSL https://srvaudit.com/install | sudo sh</div>
                      {{-- <p class="fp"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> &nbsp;Install CentOS 7</p>
                      <div class="code">curl -sSL --ciphers ecdhe_ecdsa_aes_128_sha https://srvaudit.com/installcentos | sudo sh</div>--}}
