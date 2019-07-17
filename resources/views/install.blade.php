@@ -119,7 +119,7 @@ chmod 666 /tmp/srvHistory
 perl -pi -e 's/="/="\/usr\/local\/bin\/srvaudit\/bin:/' /etc/environment > /dev/null 2>&1
 
 ## jira
-wget https://github.com/Netflix-Skunkworks/go-jira/releases/download/v1.0.15/jira-linux-amd64
+wget https://github.com/go-jira/jira/releases/download/v1.0.20/jira-linux-amd64
 mv jira-linux-amd64 /usr/sbin/jira && chmod +x /usr/sbin/jira
 
 ## add systemd service
