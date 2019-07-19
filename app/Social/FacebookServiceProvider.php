@@ -8,17 +8,17 @@ class FacebookServiceProvider extends AbstractServiceProvider
 {
    /**
      *  Handle Facebook response
-     * 
+     *
      *  @return Illuminate\Http\Response
      */
     public function handle()
     {
         $user = $this->provider->fields([
-                    'first_name', 
-                    'last_name', 
-                    'email', 
-                    'gender', 
-                    'verified',                    
+                    'first_name',
+                    'last_name',
+                    'email',
+                    'gender',
+                    'verified',
                 ])->user();
 
         $existingUser = User::whereEmail($user->email)->orWhere('settings->facebook_id', $user->id)->first();
@@ -42,10 +42,10 @@ class FacebookServiceProvider extends AbstractServiceProvider
             'email' => $user->email,
             'gender' => ucfirst($user->user['gender']),
             'settings' => [
-                'facebook_id' => $user->id,                
+                'facebook_id' => $user->id,
             ]
-        ]);        
+        ]);
 
         return $this->login($newUser);
-    }       
+    }
 }

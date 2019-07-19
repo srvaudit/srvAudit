@@ -26,7 +26,7 @@ class SocialController extends Controller
 
     /**
      *  Create a new controller instance
-     * 
+     *
      * @return  void
      */
     public function __construct()
@@ -36,23 +36,23 @@ class SocialController extends Controller
 
     /**
      *  Redirect the user to provider authentication page
-     * 
+     *
      *  @param  string $driver
      *  @return \Illuminate\Http\Response
      */
     public function redirectToProvider($driver)
     {
-        return (new $this->providers[$driver])->redirect();        
+        return (new $this->providers[$driver])->redirect();
     }
 
     /**
      *  Handle provider response
-     * 
+     *
      *  @param  string $driver
      *  @return \Illuminate\Http\Response
      */
     public function handleProviderCallback($driver)
-    {   
+    {
         try {
             return (new $this->providers[$driver])->handle();
         } catch (InvalidStateException $e) {

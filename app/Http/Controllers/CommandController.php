@@ -41,7 +41,7 @@ class CommandController extends Controller
     public function store(Request $request)
     {
         $command = new Command($request->all());
-        $session = Session::select('id')->where('sid',$request['sid'])->first();
+        $session = Session::select('id')->where('sid', $request['sid'])->first();
         $command->session_id = $session->id;
         $command->start = Carbon::createFromTimestamp($request->input('start'))->toDateTimeString('Y-m-d H:i:s');
         $command->end = Carbon::createFromTimestamp($request->input('end'))->toDateTimeString('Y-m-d H:i:s');
@@ -57,7 +57,7 @@ class CommandController extends Controller
      */
     public function show(Command $sid)
     {
-        return Command::where('sid','=',"$sid")->orderBy('created_at','asc')->get();
+        return Command::where('sid', '=', "$sid")->orderBy('created_at', 'asc')->get();
     }
 
     /**

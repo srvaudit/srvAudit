@@ -16,14 +16,16 @@ abstract class AbstractServiceProvider
     {
         $this->provider = Socialite::driver(
             str_replace(
-                'serviceprovider', '', strtolower((new \ReflectionClass($this))->getShortName())
+                'serviceprovider',
+                '',
+                strtolower((new \ReflectionClass($this))->getShortName())
             )
         );
     }
 
     /**
      *  Logged in the user
-     * 
+     *
      *  @param  \App\User $user
      *  @return \Illuminate\Http\Response
      */
@@ -36,7 +38,7 @@ abstract class AbstractServiceProvider
 
     /**
      *  Register the user
-     * 
+     *
      *  @param  array $user
      *  @return User $user
      */
@@ -44,14 +46,14 @@ abstract class AbstractServiceProvider
     {
         $password = bcrypt(str_random(10));
         
-        $newUser = User::create(array_merge($user, ['password' => $password]));        
+        $newUser = User::create(array_merge($user, ['password' => $password]));
 
         return $newUser;
     }
 
     /**
      *  Redirect the user to provider authentication page
-     * 
+     *
      *  @return \Illuminate\Http\Response
      */
     public function redirect()
@@ -61,8 +63,8 @@ abstract class AbstractServiceProvider
 
     /**
      *  Handle data returned by the provider
-     * 
+     *
      *  @return \Illuminate\Http\Response
      */
-    abstract public function handle();         
+    abstract public function handle();
 }

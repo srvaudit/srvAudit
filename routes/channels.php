@@ -16,8 +16,8 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 });
 
 Broadcast::channel('session.{sid}.commands', function ($user, $sid) {
-    if($session = App\Session::where('sid','=',$sid)->first()) {
-	if($user->id === $session->user_id) {
+    if ($session = App\Session::where('sid', '=', $sid)->first()) {
+        if ($user->id === $session->user_id) {
             return $user->id === $session->user_id;
         } else {
             return false;

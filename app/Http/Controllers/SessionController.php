@@ -20,7 +20,6 @@ use App\Events\CommandListRequested;
 use Symfony\Component\Process\Process;
 use Laravel\Spark\Contracts\Repositories\NotificationRepository;
 
-
 class SessionController extends Controller
 {
     protected $commands;
@@ -40,22 +39,22 @@ class SessionController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $latestsessions = Session::select('sessions.sid as sid', 'sessions.hostname as hostname', 'sessions.username as username', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->orderBy('sessions.created_at','desc')->take(6)->get();
-        if(count($latestsessions) > 0) {
-            foreach($latestsessions as $session) {
+        $latestsessions = Session::select('sessions.sid as sid', 'sessions.hostname as hostname', 'sessions.username as username', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->orderBy('sessions.created_at', 'desc')->take(6)->get();
+        if (count($latestsessions) > 0) {
+            foreach ($latestsessions as $session) {
                 $prettystarttimes[] = $session->created_at->diffForHumans();
             }
         } else {
             return view('start');
         }
         return view('home', [
-            'servers'           =>  Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('hostname')->orderBy('hostname','asc')->groupBy('hostname')->get(),
+            'servers'           =>  Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('hostname')->orderBy('hostname', 'asc')->groupBy('hostname')->get(),
             'lservers'          =>  $this->getServerSessionCounts(),
             'usersessioncounts' =>  $this->getUserSessionCounts(),
-            'users'             =>  Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('username')->orderBy('username','asc')->groupBy('username')->get(),
+            'users'             =>  Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('username')->orderBy('username', 'asc')->groupBy('username')->get(),
             'latestsessions'    =>  $latestsessions,
             'prettystarttimes'  =>  $prettystarttimes,
-            'numlines'          =>  Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('sid','hostname')->count(),
+            'numlines'          =>  Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('sid', 'hostname')->count(),
             'totalsessions'     =>  Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->count(),
             'totalcommands'     =>  Command::join('sessions', 'sessions.id', '=', 'commands.session_id')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->count(),
             'daysessions'       =>  Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->whereBetween('sessions.created_at', [Carbon::now()->subDay(), Carbon::now()])->count(),
@@ -96,14 +95,14 @@ class SessionController extends Controller
         $session->save();
         // send to redis -> socket.io -> browser vue instance
         event(new SessionReceived($session));
-        foreach($request->user()->currentTeam->users as $user) {
+        foreach ($request->user()->currentTeam->users as $user) {
             $this->notifications->create($user, [
                 'icon' => 'fa-chevron-right',
                 'body' => 'Session '.$session->sid.' started by '.$session->username.' on host '.$session->hostname,
                 'action_text' => 'View Session',
                 'action_url' => '/sessions/'.$session->sid,
             ]);
-            if($user->onesignal_id) {
+            if ($user->onesignal_id) {
                 Log::debug("onesignal_id: $user->onesignal_id");
                 OneSignal::sendNotificationToUser($session->username." started a session on ".$session->hostname, $user->onesignal_id, $url = "https://dev.srvaudit.com/sessions/".$session->sid, $data = null, $buttons = null, $schedule = null);
             }
@@ -141,7 +140,7 @@ class SessionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $session = Session::where('sid','=',"$id")->first();
+        $session = Session::where('sid', '=', "$id")->first();
         $session->notes = $request->notes;
         $session->updated_at = Carbon::now();
         $session->save();
@@ -167,15 +166,14 @@ class SessionController extends Controller
     {
         $user = Auth::user();
         $users = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->get();
-        $topusers = array();
-        foreach ($users as $auser)
-        {
+        $topusers = [];
+        foreach ($users as $auser) {
             $topusers[] = $auser->username;
         }
         $users = array_count_values($topusers);
         arsort($users);
         // show only top 6 servers by session count
-        $users = array_slice($users,0,6);
+        $users = array_slice($users, 0, 6);
         return $users;
     }
 
@@ -188,15 +186,14 @@ class SessionController extends Controller
     {
         $user = Auth::user();
         $servers = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->get();
-        $topservers = array();
-        foreach ($servers as $server)
-        {
+        $topservers = [];
+        foreach ($servers as $server) {
             $topservers[] = $server->hostname;
         }
         $servers = array_count_values($topservers);
         arsort($servers);
         // show only top 6 servers by session count
-        $servers = array_slice($servers,0,6);
+        $servers = array_slice($servers, 0, 6);
         return $servers;
     }
 
@@ -208,14 +205,14 @@ class SessionController extends Controller
     public function getServers($id)
     {
         $user = Auth::user();
-        $servers = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('hostname')->orderBy('hostname','asc')->groupBy('hostname')->get();
-        $users = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('username')->orderBy('username','asc')->groupBy('username')->get();
-        $sessions = Session::select('sessions.id as id', 'sessions.sid as sid', 'sessions.hostname as hostname', 'sessions.username as username', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->where('hostname','=',"$id")->distinct()->orderBy('sessions.created_at','desc')->simplePaginate(25);
-	$numcommands = array();
-	$numlines = array();
-        $prettystarttimes = array();
-        $sessiondurations = array();
-        foreach($sessions as $session) {
+        $servers = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('hostname')->orderBy('hostname', 'asc')->groupBy('hostname')->get();
+        $users = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('username')->orderBy('username', 'asc')->groupBy('username')->get();
+        $sessions = Session::select('sessions.id as id', 'sessions.sid as sid', 'sessions.hostname as hostname', 'sessions.username as username', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->where('hostname', '=', "$id")->distinct()->orderBy('sessions.created_at', 'desc')->simplePaginate(25);
+        $numcommands = [];
+        $numlines = [];
+        $prettystarttimes = [];
+        $sessiondurations = [];
+        foreach ($sessions as $session) {
             $numcommands[] = $session->commands()->count();
             $prettystarttimes[] = $session->created_at->diffForHumans();
             $starttimes[] = $session->created_at;
@@ -244,14 +241,14 @@ class SessionController extends Controller
     public function getUser($username)
     {
         $user = Auth::user();
-        $servers = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('hostname')->orderBy('hostname','asc')->groupBy('hostname')->get();
-        $users = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('username')->orderBy('username','asc')->groupBy('username')->get();
-        $sessions = Session::select('sessions.id as id', 'sessions.sid as sid', 'sessions.hostname as hostname', 'sessions.username as username', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->where('username','=',"$username")->distinct()->orderBy('sessions.created_at','desc')->simplePaginate(25);
-        $numcommands = array();
-        $numlines = array();
-        $prettystarttimes = array();
-        $sessiondurations = array();
-        foreach($sessions as $session) {
+        $servers = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('hostname')->orderBy('hostname', 'asc')->groupBy('hostname')->get();
+        $users = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('username')->orderBy('username', 'asc')->groupBy('username')->get();
+        $sessions = Session::select('sessions.id as id', 'sessions.sid as sid', 'sessions.hostname as hostname', 'sessions.username as username', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->where('username', '=', "$username")->distinct()->orderBy('sessions.created_at', 'desc')->simplePaginate(25);
+        $numcommands = [];
+        $numlines = [];
+        $prettystarttimes = [];
+        $sessiondurations = [];
+        foreach ($sessions as $session) {
             $numcommands[] = $session->commands()->count();
             $prettystarttimes[] = $session->created_at->diffForHumans();
             $starttimes[] = $session->created_at;
@@ -278,13 +275,13 @@ class SessionController extends Controller
     public function listSessions()
     {
         $user = Auth::user();
-        $servers = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('hostname')->orderBy('hostname','asc')->groupBy('hostname')->get();
-        $users = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('username')->orderBy('username','asc')->groupBy('username')->get();
-        $sessions = Session::select('sessions.id as id', 'sessions.sid as sid', 'sessions.hostname as hostname', 'sessions.username as username', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->orderBy('sessions.created_at','desc')->simplePaginate(25);
-	$numcommands = array();
-	$numlines = array();
-        if(count($sessions) > 0) {
-            foreach($sessions as $session) {
+        $servers = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('hostname')->orderBy('hostname', 'asc')->groupBy('hostname')->get();
+        $users = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->select('username')->orderBy('username', 'asc')->groupBy('username')->get();
+        $sessions = Session::select('sessions.id as id', 'sessions.sid as sid', 'sessions.hostname as hostname', 'sessions.username as username', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->orderBy('sessions.created_at', 'desc')->simplePaginate(25);
+        $numcommands = [];
+        $numlines = [];
+        if (count($sessions) > 0) {
+            foreach ($sessions as $session) {
                 $numcommands[] = $session->commands()->count();
                 $prettystarttimes[] = $session->created_at->diffForHumans();
                 $starttimes[] = $session->created_at;
@@ -317,9 +314,9 @@ class SessionController extends Controller
     public function getSession($id, Request $request)
     {
         $user = Auth::user();
-        $sessionuser = Session::select('username')->where('sid','=',"$id")->get();
-        $sessions = Session::select('sessions.id as id', 'sessions.hostname as hostname', 'sessions.ticket_url as ticket_url', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at', 'sessions.notes as notes')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->where('sid','=',"$id")->orderBy('sessions.created_at','desc')->simplePaginate(25);
-        foreach($sessions as $session) {
+        $sessionuser = Session::select('username')->where('sid', '=', "$id")->get();
+        $sessions = Session::select('sessions.id as id', 'sessions.hostname as hostname', 'sessions.ticket_url as ticket_url', 'sessions.created_at as created_at', 'sessions.updated_at as updated_at', 'sessions.notes as notes')->join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->where('sid', '=', "$id")->orderBy('sessions.created_at', 'desc')->simplePaginate(25);
+        foreach ($sessions as $session) {
             $started = $session->created_at->diffForHumans();
             $starttime = $session->created_at;
             $endtime = $session->updated_at;
@@ -327,25 +324,25 @@ class SessionController extends Controller
             $ticket_url = $session->ticket_url;
             $notes = $session->notes;
         }
-		if ($request->ajax() || $request->isJson()) {
+        if ($request->ajax() || $request->isJson()) {
             //Get data from your Model or whatever
             return response()->json([
-                'commands' => Command::where('sid','=',"$id")->get()
+                'commands' => Command::where('sid', '=', "$id")->get()
             ]);
-		} else {
-			return view('session', [
-				'sid'           => $id,
-				'user'          => $sessionuser,
-				'sessions'      => $sessions,
-				'duration'      => $duration,
-				'ticket_url'    => $ticket_url,
-				'notes'         => $notes,
-				'command_count' => Command::where('sid','=',"$id")->count(),
-				'starttime'     => $starttime,
-				'endtime'       => $endtime,
-				'started'       => $started
-			]);
-		}
+        } else {
+            return view('session', [
+                'sid'           => $id,
+                'user'          => $sessionuser,
+                'sessions'      => $sessions,
+                'duration'      => $duration,
+                'ticket_url'    => $ticket_url,
+                'notes'         => $notes,
+                'command_count' => Command::where('sid', '=', "$id")->count(),
+                'starttime'     => $starttime,
+                'endtime'       => $endtime,
+                'started'       => $started
+            ]);
+        }
         event(new CommandListRequested($this->commands->show($id)));
     }
 
@@ -360,8 +357,7 @@ class SessionController extends Controller
     public function getAuditSummary($lines, $id)
     {
         $auditfile = '';
-        foreach ($lines as $line)
-        {
+        foreach ($lines as $line) {
             $auditfile = $auditfile . $line->message . "\n";
         }
         Storage::disk('local')->put($id, $auditfile);
@@ -394,8 +390,7 @@ class SessionController extends Controller
     public function getSessionSummary($lines, $id)
     {
         $sessionfile = '';
-        foreach ($lines as $line)
-        {
+        foreach ($lines as $line) {
             $sessionfile = $sessionfile . $line->line;
         }
         Storage::disk('local')->put($id, $sessionfile);
@@ -415,8 +410,8 @@ class SessionController extends Controller
         $numMonths=6;
         $monthData['label'] = 'Sessions per month';
         $monthLabels[] = Carbon::now()->format('F');
-        for($i=0; $i < $numMonths; $i++) {
-            if($i > 0) {
+        for ($i=0; $i < $numMonths; $i++) {
+            if ($i > 0) {
                 $monthData['data'][] = Session::join('users', 'sessions.user_id', '=', 'users.id')->where('users.current_team_id', '=', $user->current_team_id)->whereBetween('sessions.created_at', [Carbon::now()->startOfMonth()->subMonth($i)->startOfMonth(), Carbon::now()->startOfMonth()->subMonth($i)->endOfMonth()])->count();
                 $monthLabels[] = Carbon::now()->startOfMonth()->subMonth($i)->format('F');
             } else {
@@ -438,22 +433,22 @@ class SessionController extends Controller
     {
         $user = Auth::user();
         $numMonths=6;
-        $reportUsers = Session::select('username')->where('team_id','=',$user->current_team_id)->distinct()->get();
-        for($i=0; $i < $numMonths; $i++) {
-            if($i > 0) {
+        $reportUsers = Session::select('username')->where('team_id', '=', $user->current_team_id)->distinct()->get();
+        for ($i=0; $i < $numMonths; $i++) {
+            if ($i > 0) {
                 $monthLabels[] = Carbon::now()->startOfMonth()->subMonth($i)->format('F');
             } else {
                 $monthLabels[] = Carbon::now()->startOfMonth()->format('F');
             }
         }
         $k=0;
-        foreach($reportUsers as $auser) {
-            for($i=0; $i < $numMonths; $i++) {
+        foreach ($reportUsers as $auser) {
+            for ($i=0; $i < $numMonths; $i++) {
                 ${'userStats'.$k}['label'] = $auser->username;
-                if($i > 0) {
-                    ${'userStats'.$k}['data'][] = Session::select()->whereBetween('sessions.created_at', [Carbon::now()->startOfMonth()->subMonth($i)->startOfMonth(), Carbon::now()->startOfMonth()->subMonth($i)->endOfMonth()])->where('username','=',"$auser->username")->where('team_id', '=', $user->current_team_id)->count();
+                if ($i > 0) {
+                    ${'userStats'.$k}['data'][] = Session::select()->whereBetween('sessions.created_at', [Carbon::now()->startOfMonth()->subMonth($i)->startOfMonth(), Carbon::now()->startOfMonth()->subMonth($i)->endOfMonth()])->where('username', '=', "$auser->username")->where('team_id', '=', $user->current_team_id)->count();
                 } else {
-                    ${'userStats'.$k}['data'][] = Session::select()->whereBetween('sessions.created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->where('username','=',"$auser->username")->where('team_id', '=', $user->current_team_id)->count();
+                    ${'userStats'.$k}['data'][] = Session::select()->whereBetween('sessions.created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->where('username', '=', "$auser->username")->where('team_id', '=', $user->current_team_id)->count();
                 }
             }
             $dataset[] = ${'userStats'.$k};

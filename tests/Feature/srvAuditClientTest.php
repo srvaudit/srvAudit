@@ -6,9 +6,9 @@ class srvAuditClientTest extends TestCase
     /** @test */
     public function itCreatesAJiraIssue()
     {
-        exec('/var/www/tests/Feature/client/new_jira_issue.exp 22 cotton@192.168.42.178',$out);
-        foreach($out as $line) {
-            if(strpos($line, 'SRVAUD') !== false ) {
+        exec('/var/www/tests/Feature/client/new_jira_issue.exp 22 cotton@192.168.42.178', $out);
+        foreach ($out as $line) {
+            if (strpos($line, 'SRVAUD') !== false) {
                 $ticket = substr($line, strpos($line, "SRVAUD"), 10);
             }
         }
@@ -17,7 +17,7 @@ class srvAuditClientTest extends TestCase
         $this->assertContains('free -m', $haystack[23]);
     }
 
-    /** @test 
+    /** @test
     public function itCreatesARedmineIssue()
     {
         exec('/var/www/tests/Feature/client/new_issue.exp 2224 srvaudit@dev.srvaudit.com',$out);
@@ -37,7 +37,7 @@ class srvAuditClientTest extends TestCase
         $this->assertContains('free -m', $haystack[189]);
     }
 
-    /** @test 
+    /** @test
     public function itUpdatesARedmineIssue()
     {
         $handle = fopen('/tmp/test', "r");

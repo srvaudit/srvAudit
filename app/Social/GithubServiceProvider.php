@@ -9,7 +9,7 @@ class GithubServiceProvider extends AbstractServiceProvider
 {
    /**
      *  Handle Facebook response
-     * 
+     *
      *  @return Illuminate\Http\Response
      */
     public function handle()
@@ -34,10 +34,10 @@ class GithubServiceProvider extends AbstractServiceProvider
             'name' => $user->user['name'],
             'email' => $user->email,
             'settings' => [
-                'github_id' => $user->id,                
+                'github_id' => $user->id,
             ]
-        ]);        
+        ]);
 
         return $this->login($newUser);
-    }       
+    }
 }
